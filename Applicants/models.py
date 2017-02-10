@@ -47,7 +47,7 @@ class MyUser(AbstractBaseUser):
         verbose_name='nickname',
         max_length=50,
         blank=False,
-        unique=True,
+        unique=False,
         default='unknown'
     )
     is_active = models.BooleanField(default=True)
