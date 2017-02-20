@@ -9,7 +9,11 @@ class Session(models.Model):
         related_name='%(app_label)s_%(class)s_related'
     )
 
-    instruments = models.ManyToManyField(Instrument)
+    instruments = models.ManyToManyField(
+        'Session.Instrument',
+        verbose_name='Session Instrument List',
+        related_name='%(app_label)s_%(class)s_instruments'
+    )
 
 class Instrument(models.Model):
     name = models.CharField(max_length=50, verbose_name='instrument name')

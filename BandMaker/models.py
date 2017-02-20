@@ -19,7 +19,7 @@ class Band(models.Model):
     name = models.CharField(max_length=252, verbose_name='band name')
 
     musicPieces = models.ManyToManyField(
-        Instrument,
+        'BandMaker.MusicPiece',
         verbose_name='band music list',
         related_name='%(app_label)s_%(class)s_musics'
     )
@@ -30,7 +30,7 @@ class MusicPiece(models.Model):
     datetime = models.DateTimeField(verbose_name='perfome Date and time')
 
     instruments = models.ManyToManyField(
-        Instrument,
+        'Session.Instrument',
         verbose_name='required instruments',
         related_name='%(app_label)s_%(class)s_related'
     )

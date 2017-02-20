@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Custom Applications
     'BandMaker',
     'Applicants',
+    'Session',
 
     # REST API
     'rest_framework',
